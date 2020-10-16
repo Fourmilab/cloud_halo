@@ -1,0 +1,126 @@
+
+                     Fourmilab Cloud Halo
+
+                       Development Log
+
+2020 October 13
+
+After hearing it suggested at the Server Meeting today, began
+development and implemented the region cloud test, halo display
+and clear with timer, particle effect to sparkle when the halo
+appears, and sound effect for entry to a cloud region.
+
+2020 October 14
+
+Integrated the Script Processor and made the main script run a
+script called "Configuration" if present upon state_entry().
+This allows setting parameters without editing the script.
+
+Defined the concepts of Cloud and Dirt for settings, which
+correspond to whether the simulation in which the avatar is
+present is hosted in the cloud or on the legacy co-located
+server farm.  These are used in the following settings:
+
+    Set halo colour <cloud_colour> <dirt_colour>
+        Sets, as an RGB vector, the colour of the halo
+        to display upon entry to a simulation of the
+        corresponding type.  Defaults are:
+            cloud_colour    <1, 0.843137, 0>  (HTML5 gold)
+            dirt_colour     <0.5, 0.5, 0.5>   (HTML5 grey)
+
+    Set halo alpha cloud_alpha dirt_alpha
+        Sets the transparency of the halo for each venue.
+        If the alpha is set to zero, the halo is not
+        shown there.  Defaults are:
+            cloud_alpha     1
+            dirt_alpha      0
+        Setting both alphas to zero disables halos entirely.
+
+    Set halo glow cloud_glow dirt_glow
+        Sets the glow factor for each venue.  Defaults are:
+            cloud_glow      0.2
+            dirt_glow       0
+
+    Set halo time n
+        Sets the halo to display for n seconds after appearing.
+        If n is set to zero, the halo will be permanent.
+
+The Test command allows testing settings without having to
+actually cross regions.
+
+    Test cloud
+        Act as if entering a cloud region from a dirt region.
+
+    Test dirt
+        Act as if entering a dirt region from a cloud region.
+
+    Test region
+        Simulate arrival in the current region from one of
+        the different type.
+
+https://www.myinstants.com/instant/sad-trombone/
+
+2020 October 15
+
+Added a Set channel command to set the channel on which we
+listen.  If done in the Configuration notecard, this takes
+precedence over the default setting.
+
+Added a Set edit on/off command to unconditionally show or
+hide the halo to allow it to be selected for editing.
+
+Added a Set Sound command to specify the sound clips played
+for cloud and dirt arrival.  The sound clips must be in the
+attachment's inventory.  A null string ("") causes no clip
+to be played.
+
+Fixed a bug in fixQuotes, which didn't handle null strings
+correctly due to eccentricity in llGetSubString().
+
+Arrival at a busy region may result in a sufficiently long
+delay that the arrival effects play while the avatar is
+invisible or an orange cloud.  I added a:
+    Set rcwait n
+parameter which delays region arrival activities for n
+seconds after receiving the changed() message for the
+region arrival.
+
+2020 October 16
+
+Created local development Git repository in:
+    ~/w/SecondLife/CloudHalo/git
+with:
+    git init
+
+Logged on to github.com.
+
+Created a new repository:
+    cloud_halo
+with access URLs:
+    HTTPS: https://github.com/Fourmilab/cloud_halo.git
+    SSH:   git@github.com:Fourmilab/cloud_halo.git
+
+Linked the local repository to the GitHub archive:
+    git remote add origin git@github.com:Fourmilab/cloud_halo.git
+
+Committed the *.md files in the repository root and the
+marketplace/images files to which they link.
+
+Confirmed that my local "git sync" command works with the remote
+repository.
+
+The documents in the repository root now work properly.
+
+Posted demonstration video on YouTube at:
+    https://www.youtube.com/watch?v=lnYnl4_uQy4
+and linked to the Marketplace listing:
+    https://marketplace.secondlife.com/p/Fourmilab-Cloud-Halo/20555301
+
+Integrated changes to the Description on the Marketplace into the
+master document in the Git repository, committed, and published on
+GitHub.
+
+Verified source files in the Git repository are identical to those
+built into the object, committed them, and published on GitHub.
+
+Released version 1.0 to the Marketplace.
