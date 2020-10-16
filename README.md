@@ -2,8 +2,6 @@
 
 ![Fourmilab Cloud Halo](marketplace/images/cloud_halo_1.png)
 
-[Fourmilab Cloud Halo](https://marketplace.secondlife.com/p/Fourmilab-Cloud-Halo/20555301)
-
 As of the latter part of 2020, Second Life is in the process of
 migrating from hosting on its own server farm to a "cloud" service
 provider.  This process is called the "uplift", and as it progresses,
@@ -17,10 +15,11 @@ cloud.
 
 It is possible to determine whether a region is on an original host or
 the cloud by examining the host name of the simulation, but many users
-aren't familiar with the arcana of doing so.  Fourmilab Cloud Halo is a
-light-hearted attachment which makes it easy to see the hosting status
-wherever you happen to visit and alert you to changes when you arrive
-in a new region.
+aren't familiar with the arcana of doing so.
+[Fourmilab Cloud Halo](https://marketplace.secondlife.com/p/Fourmilab-Cloud-Halo/20555301)
+is a light-hearted attachment which makes it easy to see the hosting
+status wherever you happen to visit and alert you to changes when you
+arrive in a new region.
 
 ![Fourmilab Cloud Halo](marketplace/images/cloud_halo_2.png)
 
