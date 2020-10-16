@@ -1,0 +1,5 @@
+Wearable halo shows whether you're in a “cloud” hosted region
+
+Configurable via local chat commands or a notecard script
+
+Full permissions, including all scripts
