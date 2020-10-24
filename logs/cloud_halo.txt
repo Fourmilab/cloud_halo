@@ -124,3 +124,15 @@ Verified source files in the Git repository are identical to those
 built into the object, committed them, and published on GitHub.
 
 Released version 1.0 to the Marketplace.
+
+2020 October 24
+
+The halo was listening on commandChannel for chat commands from any
+avatar, and thus if more than one avatar was wearing a halo within chat
+range, the others would report an invalid access attempt.  I added a
+filter on the avatar's key in the llListen() calls (one on attachment,
+one in state_entry() to handle reset of the script while attached, and
+one in the "Set channel" command) to restrict the listen to the avatar
+wearing the halo or, if not attached, its owner.
+
+Released version 1.1 to the Marketplace.

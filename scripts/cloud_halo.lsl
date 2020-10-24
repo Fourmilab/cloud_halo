@@ -393,7 +393,7 @@
 
     configureComplete() {
         if (commandH == 0) {
-            commandH = llListen(commandChannel, "", NULL_KEY, "");
+            commandH = llListen(commandChannel, "", whoDat, "");
             tawk("Listening on /" + (string) commandChannel);
         }
         checkRegion(0);             // Check venue of current region
@@ -463,7 +463,7 @@
                         llListenRemove(commandH);
                     }
                     commandChannel = newch;
-                    commandH = llListen(commandChannel, "", NULL_KEY, "");
+                    commandH = llListen(commandChannel, "", whoDat, "");
                     tawk("Listening on /" + (string) commandChannel);
                 }
 
@@ -652,7 +652,7 @@
             if (attachedAgent != NULL_KEY) {
                 whoDat = attachedAgent;
                 if (commandH == 0) {
-                    commandH = llListen(commandChannel, "", NULL_KEY, "");
+                    commandH = llListen(commandChannel, "", whoDat, "");
                     tawk("Listening on /" + (string) commandChannel);
                 }
             } else {
